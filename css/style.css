@@ -33,8 +33,8 @@ h1,h2,h3,h4,h5,h6{
    --grey: #F4F2FF;
    --dark-grey: #828282bf;
 
-  /*  --green: #23AE00;
-   --light-green: #BDFFAC; */
+   --green: #23AE00;
+   --light-green: #BDFFAC;
 
    --red: #FE2727;
    --light-red: #FFD2D2;
@@ -301,6 +301,46 @@ a:hover{
 }
 
 /*------------------------*/
+
+.page__gallery {}
+
+.gallery {
+   padding-top: 50px;
+   padding-bottom: 100px;
+}
+
+.gallery__container {}
+
+.gallery__items {
+   display: grid;
+   gap: 15px;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gallery__item {
+   position: relative;
+   padding: 0px 0px 85% 0px;
+}
+
+.gallery__item img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.gallery__item_big {}
+
+@media (min-width:543px) {
+   .gallery__item_big {
+      grid-column: span 2;
+      grid-row: span 2;
+   }
+}
+
+/*------------------------*/
 .forms {
    display: flex;
 }
@@ -353,9 +393,17 @@ a:hover{
    font-size: 16px;
    transition: all 0.5s ease 0s;
 }
-/* .form__input._error{
+
+
+.form__input._error {
    box-shadow: 0 0 15px var(--red);
-} */
+}
+
+.form__input._success {
+   box-shadow: 0 0 15px var(--green);
+}
+
+
 
 .form__input:focus, .form__textarea:focus {
    box-shadow: 0 0 15px #122e3d;
